@@ -172,6 +172,46 @@
             /* スマホでも邪魔なら以下で目次を非表示にすることも可能 */
             /* #toc-container { display: none; } */
         }
+        /* 解説コンテナ全体のスタイル */
+        .explanation-container {
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+
+        /* クリックする見出し部分 */
+        .explanation-title {
+            padding: 10px 15px;
+            background-color: #eee;
+            cursor: pointer;
+            font-weight: bold;
+            list-style: none; /* デフォルトの三角形を消したい場合 */
+            display: flex;
+            align-items: center;
+        }
+
+        /* 三角アイコンのカスタマイズ（任意） */
+        .explanation-title::before {
+            content: "▶";
+            margin-right: 10px;
+            font-size: 0.8em;
+            transition: transform 0.3s;
+        }
+
+        /* 開いている時のアイコン変化 */
+        .explanation-container[open] .explanation-title::before {
+            transform: rotate(90deg);
+        }
+
+        /* 解説の中身 */
+        .explanation-content {
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
     </style>
 </head>
 
@@ -213,6 +253,40 @@
                     a (1, 2) b (1, 4) c (2, 3) d (3, 4) e すべて
                 </div>
             </div>
+            <details class="explanation-container">
+                <summary class="explanation-title">解説</summary>
+                <div class="explanation-content">
+                    <p>
+                        <!--ここに解説の本文を記述-->
+                    </p>
+                </div>
+            </details>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】血液の働きとして正しいのはどれか（2024年 問1）</h4>
+            <div class="options-vertical">
+                1 酸素、二酸化炭素の運搬<br>
+                2 ホルモンの運搬<br>
+                3 浸透圧の維持<br>
+                4 体液量の維持
+            </div>
+            <div class="options-horizontal">
+                a (1, 3,4) b(1,2) c(2,3) d (4のみ) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】血液による二酸化炭素の運搬について正しいのはどれか。（2024年 問6、2023年 問6）</h4>
+            <div class="options-vertical">
+                1 ほとんどが物理的に血漿中に溶解している。<br>
+                2 血漿中で炭酸脱水酵素作用をうける。<br>
+                3 赤血球内で炭酸脱水酵素作用をうける。<br>
+                4 脱酸素化ヘモグロビンはカルバミノ化を受けやすい。
+            </div>
+            <div class="options-horizontal">
+                a (1,2) b (1,4) c(2,3) d(3,4) e すべて
+            </div>
         </div>
 
         <div class="question-block">
@@ -250,6 +324,19 @@
                 </div>
                 <div class="options-horizontal">
                     a (1, 2) b (1, 4) c (2, 3) d (3, 4) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】赤血球について正しいものを選べ (2023年 問3)</h4>
+                <div class="options-vertical">
+                    1 ポルフィリン環の中心に鉄原子が配位する<br>
+                    2 1 分子のヘムは 1 本のグロビン鎖のヘムポケットに収まる<br>
+                    3 鉄原子(Fe2+)に酸素分子が結合することを酸素化という<br>
+                    4 鉄原子が酸化される(Fe3+)と酸素を結合できない<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
                 </div>
             </div>
         </div>
@@ -464,7 +551,7 @@
             </div>
 
             <div class="similar-question">
-                <h4>【類題】凝固反応について誤っているのはどれか (2024年 問62)</h4>
+                <h4>【類題】凝固反応について誤っているのはどれか (2024年 問62、2023年 問62)</h4>
                 <div class="options-vertical">
                     1 血清にトロンビンを添加するとフィブリンが形成される<br>
                     2 組織因子は、分子の両端に血小板を結合する<br>
@@ -477,15 +564,15 @@
             </div>
 
             <div class="similar-question">
-                <h4>【類題】フィブリノーゲンについて正しいものを選べ (2023年 問8)</h4>
+                <h4>【類題】トロンビンについて正しいものを選べ (2024年 問8)</h4>
                 <div class="options-vertical">
-                    1 Gla-domain をもつ。<br>
-                    2 D-domain と E-domain からなる。<br>
-                    3 プラスミンにより分解される。<br>
-                    4 凝固因子である。<br>
+                    1 セリン酵素である。<br>
+                    2 活性化凝固第X因子により活性化される。<br>
+                    3 2の反応は活性化凝固第V因子の存在下で大きく促進する。<br>
+                    4 血小板に受容体が存在する。<br>
                 </div>
                 <div class="options-horizontal">
-                    a (1, 2, 4) b (2, 3, 4) c (1, 2) d (2, 3) e (2, 4)
+                    a (1, 3) b (1, 2, 4) c (1, 2, 3) d (2, 4) e すべて
                 </div>
             </div>
 
@@ -501,10 +588,49 @@
                     a (1, 3) b (1, 2, 4) c (1, 2, 3) d (2, 4) e すべて
                 </div>
             </div>
+
+            <div class="similar-question">
+                <h4>【類題】フィブリノーゲンについて正しいものを選べ (2024年 問9)</h4>
+                <div class="options-vertical">
+                    1 Gla (y-カルボキシグルタミン酸) ドメインをもたない。<br>
+                    2 トロンビンにより限定分解をうける。<br>
+                    3 フィブリンの重合によりフィブリンポリマー(ファイバー)が形成される。<br>
+                    4 フィブリンは活性化凝固第 XIII 因子により架橋形成される。
+                </div>
+                <div class="options-horizontal">
+                    a(1,2) b(1,4) c(2,3) d(3,4) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】フィブリノーゲンについて正しいものを選べ (2023年 問8)</h4>
+                <div class="options-vertical">
+                    1 Gla-domain をもつ。<br>
+                    2 D-domain と E-domain からなる。<br>
+                    3 プラスミンにより分解される。<br>
+                    4 凝固因子である。<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 2, 4) b (2, 3, 4) c (1, 2) d (2, 3) e (2, 4)
+                </div>
+            </div>
         </div>
 
 
         <h3>[循環器（心臓）]</h3>
+
+        <div class="question-block">
+            <h4>【問】刺激伝導系について正しいのはどれか。（2024年 問10、2023年 問10）</h4>
+            <div class="options-vertical">
+                1 洞房結節→心房筋→房室結節→His 束 右脚・左脚→プルキンエ線維の順で伝導する。<br>
+                2 いずれの部位の細胞も伝導度は等しい。<br>
+                3 いずれの部位の細胞も自動能を有する。<br>
+                4 正常では自動能による脱分極頻度は洞房結節が最も多い。
+            </div>
+            <div class="options-horizontal">
+                a(1,3,4) b(1,2) c(2,3) d (4のみ) e すべて
+            </div>
+        </div>
 
         <div class="question-block">
             <h4>【問】洞房結節について正しいものを選べ【改】 (2025年 問7)</h4>
@@ -538,6 +664,19 @@
                     2 脱分極相(第 0 相)では Ca+チャネルが開口する<br>
                     3 活動電位の第 2 相にプラトー相が形成される<br>
                     4 再分極相(第 3 相)では内向き整流 K+チャネルを通り K⁺が細胞外に移動する<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 2) b (1, 4) c (2, 3) d (3, 4) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】洞房結節について正しいものを選べ (2023年 問12)</h4>
+                <div class="options-vertical">
+                    1 副交感神経作用によりアセチルコリン感受性 K⁺チャネルが活性化される<br>
+                    2 副交感神経作用により洞房結節活動電位の第 4 相の傾斜が緩やかとなる<br>
+                    3 交感神経作用により心室筋の細胞内 Ca2+濃度は増加する<br>
+                    4 交感神経作用により HCN チャネルの活性が増強する<br>
                 </div>
                 <div class="options-horizontal">
                     a (1, 2) b (1, 4) c (2, 3) d (3, 4) e すべて
@@ -598,6 +737,18 @@
         </div>
 
         <div class="question-block">
+            <h4>【問】誤っているものを選べ（2025年 問9）</h4>
+            <img src="picture/2025-9.png"/>
+            <div class="options-vertical">
+                a.A は正常洞調律である<br>
+                b.A の心拍数は 75/分である<br>
+                c.B は心房細動している<br>
+                d. C の矢頭は心房の収縮によるものである<br>
+                e. C は洞調律の異常を表している
+            </div>
+        </div>
+
+        <div class="question-block">
             <h4>【問】心室筋の収縮について正しいのはどれか (2025年 問11)</h4>
             <div class="options-vertical">
                 1.細胞内 Ca2+濃度の増加が必須である<br>
@@ -610,7 +761,7 @@
             </div>
 
             <div class="similar-question">
-                <h4>【類題】心室筋の収縮について誤っているのはどれか (2024年 問18)</h4>
+                <h4>【類題】心室筋の収縮について誤っているのはどれか (2024年 問18、2023年 問15)</h4>
                 <div class="options-vertical">
                     1 細胞内 Ca²⁺濃度の増加が必須である。<br>
                     2 収縮力は生理的な細胞内 Ca²⁺濃度の増加に比例して増強する。<br>
@@ -621,6 +772,69 @@
                     a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
                 </div>
             </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】合っているものを選べ（2025年 問12）</h4>
+            <img src="picture/2025-12.png">
+            <div class="options-vertical">
+                1.A-B-C:は僧帽弁が閉まっている<br>
+                2.F-E-D:大動脈弁が開いている<br>
+                3.1 回の拍出量は 70ml である<br>
+                4.F-A:T 波が観察される
+            </div>
+            <div class="options-horizontal">
+                選択肢未再現
+            </div>
+
+            <div class="similar-question">
+                <h4>【問】心室圧-容積関係(拡張時容量 120mL、1 回拍出量 70mL、拡張期血圧 80 mmHg)について正しいのはどれか。（2023年 問16）</h4>
+                <div class="options-vertical">
+                    1 僧帽弁解放時 - 左室容積 50 mL<br>
+                    2 僧帽弁閉鎖時 - 左室容積 120 mL<br>
+                    3 大動脈弁解放時 - 左室内圧 80 mmHg<br>
+                    4 大動脈弁閉鎖時 - 左室容積 50 mL
+                </div>
+                <div class="options-horizontal">
+                    a（1, 2） b（1, 4） c（2, 3） d（3, 4） e すべて
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】以下の図について答えよ。（2024年 問12～15）</h4>
+            <div class="options-vertical">
+                図A:心電図標準肢誘導(双極誘導I、II、III と単極肢誘導 aVR、aVL、aVF)<br>
+                図B: 心エコーB モード長軸像の模式図と①から④の各部位におけるMモード模式図を図Cに示す
+            </div>
+            <img src="picture/2024-12.png">
+            <h4>図Aの心電図のおおよその電気軸はどれか。</h4>
+            <div class="options-vertical">
+                1 -30°<br>
+                2 0°<br>
+                3 30°<br>
+                4 60°<br>
+                5 いずれでもない
+            </div>
+            <div class="options-horizontal">a (1) b (2) c (3) d (4) e (5)</div>
+            <h4>図A ポイント(a)の説明で正しいのはどれか。</h4>
+            <div class="options-vertical">
+                1 ほぼすべての心室筋が脱分極している。<br>
+                2 ほぼすべての心室筋が収縮している。<br>
+                3 心エコー図Cではほぼ (e) 部に一致する。<br>
+                4 心室筋細胞内の Ca濃度は図 A (b) 部より高い。
+            </div>
+            <div class="options-horizontal">a (1, 3,4) b(1,2) c(2,3) d(4のみ) e すべて</div>
+            <h4>図Aポイント (b) の説明で正しいのはどれか。</h4>
+            <div class="options-vertical">
+                1 心エコー図Cではほぼ (c) 部に一致する。<br>
+                2 心エコー図Cではほぼ(d) 部に一致する。<br>
+                3 左心室は等容性弛緩期である。<br>
+                4 心房筋は脱分極している。
+            </div>
+            <div class="options-horizontal">a (1,3) b(1,4) c(2,3) d(2,4) e すべて</div>
+            <h4>左心室の径が最大になるのはどれか。</h4>
+            <div class="options-horizontal">a (a) b (b) c (c) d (d) e (e)</div>
         </div>
 
         <h3>[循環器 (血流・調節)]</h3>
@@ -678,6 +892,19 @@
         </div>
 
         <div class="question-block">
+            <h4>【問】毛細血管について正しいものはどれか（2023年 問23）</h4>
+            <div class="options-vertical">
+                1 動脈端と静脈端では血漿膠質浸透圧はほぼ同じである。<br>
+                2 動脈端と静脈端では血圧はほぼ同じである。<br>
+                3 酸素および二酸化炭素は濃度勾配に応じて拡散する。<br>
+                4 筋線維を一ヶ月電気刺激し続けると毛細血管の数が有意に増加する。
+            </div>
+            <div class="options-vertical">
+                a (1, 3, 4) b (1, 2) c (2, 3) d (2, 4) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
             <h4>【問】血圧調整機構について適切なものを答えなさい (2025年 問15)</h4>
             <div class="options-vertical">
                 1.血管内皮細胞から一酸化窒素が放出されると血圧が上昇する。<br>
@@ -703,12 +930,38 @@
             </div>
 
             <div class="similar-question">
+                <h4>【類題】圧受容器が高圧を検知した際、正しい反応はどれか。 (2024年 問22)</h4>
+                <div class="options-vertical">
+                    1 心拍数の減少<br>
+                    2 血管径の減少<br>
+                    3 体血圧の低下<br>
+                    4 心収縮力の低下<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3,4) b(1,2) c(2,3) d (3,4) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
                 <h4>【類題】頚動脈洞の圧受容器が刺激された時の反応で正しいものはどれか (2023年 問21)</h4>
                 <div class="options-vertical">
                     1 心拍数の増加<br>
                     2 血管緊張の低下<br>
                     3 体血圧の低下<br>
                     4 心収縮力の増加<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (2, 4) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】循環調節に関与するもので正しいものはどれか (2023年 問22)</h4>
+                <div class="options-vertical">
+                    1 動脈圧受容器の主要なものは、頸動脈洞と大動脈弓に分布する<br>
+                    2 動脈圧受容器からの一次求心性線維は、延髄の孤束核に投射する<br>
+                    3 循環系を支配する副交感神経系は、心臓迷走神経と血管拡張線維よりなる<br>
+                    4 心臓迷走神経は、心拍数を下げる作用を持つ(陰性変時作用)<br>
                 </div>
                 <div class="options-horizontal">
                     a (1, 3, 4) b (1, 2) c (2, 3) d (2, 4) e すべて
@@ -753,6 +1006,72 @@
                     a (1, 3, 4) b (1, 2) c (2, 3) d (2, 4) e すべて
                 </div>
             </div>
+
+            <div class="similar-question">
+                <h4>【問】静脈還流量を増加させるのはどれか。（2024年 問65、2023年 問52）</h4>
+                <div class="options-vertical">
+                    1 交感神経の活性化<br>
+                    2 下肢活動筋収縮<br>
+                    3 吸気時<br>
+                    4 1回拍出量增加
+                </div>
+                <div class="options-vertical">
+                    a (1,2) b (1,4) c(2,3) d(3,4) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】心拍出量が増加するのはどれか？（2023年 問17）</h4>
+                <div class="options-vertical">
+                    1 静脈還流量増加<br>
+                    2 拡張末期容量増加<br>
+                    3 副交感神経活性化<br>
+                    4 立位
+                </div>
+                <div class="options-vertical">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
+            </div>
+        </div>
+
+            <div class="similar-question">
+                <h4>【類題】立位において肺尖部に対する比較で正しいのはどれか。（2025年 問20、2024年 問30、2023年 問30）</h4>
+                <div class="options-vertical">
+                    1. 血流量は少ない<br>
+                    2. 換気量は少ない<br>
+                    3. コンプライアンスが小さい<br>
+                    4. 換気/血流量比は大きい
+                </div>
+                <div class="options-horizontal">
+                    a) 1, 3, 4 b) 1, 2 c) 2, 3 d) 4 のみ e) すべて
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】血管とその臓器・組織について正しい組み合わせはどれか。（2024年 問24）</h4>
+            <div class="options-vertical">
+                1 有窓性毛細血管 腎臟<br>
+                2 洞様毛細血管 肝臟<br>
+                3 門脈 消化器<br>
+                4 動静脈短絡 皮膚
+            </div>
+            <div class="options-horizontal">
+                a (1, 3,4) b(1,2) c(2,3) d(3,4) すべて
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】脈管について正しいのはどれか。（2023年 問19）</h4>
+            <div class="options-vertical">
+                1 循環血液量のおおよそ 75%は静脈に存在する。<br>
+                2 毛細血管の横断面積は動脈の 700 倍、静脈の 350 倍である。<br>
+                3 毛細血管も動脈や静脈と同様に、内膜・中膜・外膜の 3 層構造にて形成される。<br>
+                4 末梢リンパ管は毛細血管と直接結合する。
+            </div>
+            <div class="options-horizontal">
+                a (1, 3, 4) b (1, 2) c (2, 3) d (2, 4) e すべて
+            </div>
         </div>
 
         <h3>[呼吸]</h3>
@@ -784,6 +1103,32 @@
         </div>
 
         <div class="question-block">
+            <h4>【問】換気量・死腔量について正しいのはどれか。（2024年 問28、2023年 問27）</h4>
+            <div class="options-vertical">
+                1 1回換気量と呼吸数が一定なら、死腔量が変化しても分時換気量は一定である。<br>
+                2 1回換気量と呼吸数が一定なら、死腔量が増えると分時肺胞換気量は減少する。<br>
+                3 分時換気量が同じなら、呼吸数が多い方が分時肺胞換気量は増加する。<br>
+                4 機能的死腔量はスパイロメーターを用いて測定する。
+            </div>
+            <div class="options-horizontal">
+                a(1, 3,4) b (1,2) c(2,3) d (4のみ) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】肺循環について正しいのはどれか。（2023年 問29）</h4>
+            <div class="options-vertical">
+                1 血流増大時には開通する毛細血管数が増大する。<br>
+                2 血流増大時には毛細血管が拡張する。<br>
+                3 心拍数が増大しても肺動脈圧の増加は軽度にとどまる。<br>
+                4 肺動脈圧を低く維持することは血管外への水分漏出の抑制に役立つ。
+            </div>
+            <div class="options-horizontal">
+                a (1, 2) b (1, 4) c (2, 3) d (3, 4) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
             <h4>【問】サーファクタントについて正しいのはどれか (2025年 問18、2024年 問26)</h4>
             <div class="options-vertical">
                 1.Ⅱ型肺胞上皮細胞で産生される。<br>
@@ -806,6 +1151,19 @@
                 <div class="options-horizontal">
                     a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
                 </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】ガス交換について正しいものはどれか（2025年 問19、2024年 問29、2023年 問28）</h4>
+            <div class="options-vertical">
+                1. エネルギーが糖質のみの時は呼吸交換比は0.8である。<br>
+                2. 肺胞でガス交換に要する時間は毛細血管の血液通過時間にほぼ等しい。<br>
+                3. 吸気の CO2 分圧は肺胞の CO2 分圧にほぼ等しい。<br>
+                4. 肺胞の CO2 分圧は動脈血の CO2 分圧とほぼ等しい。
+            </div>
+            <div class="options-horizontal">
+                a) 1, 3, 4 b) 1, 4 c) 2, 3 d) 3, 4 e) すべて
             </div>
         </div>
 
@@ -844,6 +1202,32 @@
                 </div>
                 <div class="options-horizontal">
                     a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】高所到着時の動脈血ガス分析値として正しい組み合わせはどれか。（2024年 問32）</h4>
+            <div class="options-vertical">
+                1 pH 7.40、 PaCO₂ 39 mmHg、 PaO2 93 mmHg、 HCO 23 mEq/L<br>
+                2 pH 7.46、 PaCO2 32 mmHg、 PaO2 48 mmHg、 HCO3 22 mEq/L<br>
+                3 pH 7.41、 PaCO₂ 27 mmHg、 PaO₂ 54 mmHg、 HCO3 17 mEq/L<br>
+                4 pH 7.30、 PaCO₂ 22 mmHg、 PaO2 40 mmHg、 HCO3 8 mEq/L<br>
+            </div>
+            <div class="options-horizontal">
+                a (1) b(2) c (3) d (4) e いずれでもない
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】高所到着一週間後の動脈血ガス分析値として正しい組み合わせはどれか。（2024年 問33）</h4>
+                <div class="options-vertical">
+                    1 pH 7.40、 PaCO₂ 39 mmHg、 PaO2 93 mmHg、 HCO 23 mEq/L<br>
+                    2 pH 7.46、 PaCO2 32 mmHg、 PaO2 48 mmHg、 HCO3 22 mEq/L<br>
+                    3 pH 7.41、 PaCO₂ 27 mmHg、 PaO₂ 54 mmHg、 HCO3 17 mEq/L<br>
+                    4 pH 7.30、 PaCO₂ 22 mmHg、 PaO2 40 mmHg、 HCO3 8 mEq/L<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1) b(2) c (3) d (4) e いずれでもない
                 </div>
             </div>
         </div>
@@ -972,6 +1356,19 @@
         <h3>[腎臓]</h3>
 
         <div class="question-block">
+            <h4>【問】体液について正しいものはどれか。（2024年 問34）</h4>
+            <div class="options-vertical">
+                1 成人男性の体液量は体重の60%程度である。<br>
+                2 人の細胞内液は細胞外液より多い。<br>
+                3 細胞内液と比較して細胞外液にはKが豊富に存在する。<br>
+                4 血漿は細胞内液に区分される。
+            </div>
+            <div class="options-horizontal">
+                a (1,3,4) b(1,2) c(2,3) d(4のみ) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
             <h4>【問】腎臓の機能について正しいのはどれか【改】 (2025年 問23、2023年 問32)</h4>
             <div class="options-vertical">
                 1.脂質代謝<br>
@@ -995,18 +1392,57 @@
                     a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
                 </div>
             </div>
+
+            <div class="similar-question">
+                <h4>【類題】腎臓について正しいものを選べ (2023年 問33)</h4>
+                <div class="options-vertical">
+                    1 平常時の水の再吸収は約 99%である。<br>
+                    2 安静時には全血流量の約 20%が流入する。<br>
+                    3 髄質の浸透圧が低下させることで再吸収量は増加する。<br>
+                    4 1 日の糸球体濾過量の正常値は約 100 リットルである<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
+            </div>
         </div>
 
         <div class="question-block">
-            <h4>【問】糸球体濾過量（GFR）を増加させる因子はどれか (2025年 問25、2023年 問35)</h4>
+            <h4>【問】糸球体濾過に関して正しいのはどれか。（2024年 問37）</h4>
             <div class="options-vertical">
-                1.糸球体内毛細血管圧上昇<br>
-                2.輸入細動脈収縮<br>
-                3.ボウマン腔圧低下<br>
-                4.血漿膠質浸透圧低下<br>
+                1 糸球体毛細血管は無窓性毛細血管である。<br>
+                2 アルブミン(分子量7万前後)は通過する。<br>
+                3 平常時、腎血流量(RBF) および糸球体濾過量 (GFR)は体血圧により調節される。<br>
+                4 足細胞(podocyte)による濾過量の調節機構が存在する。
             </div>
             <div class="options-horizontal">
-                a)1,3,4 b)1,2 c)2,3 d)4 のみ e) 全て
+                a (1, 3, 4) b(1,2) c(2,3) d (4のみ) すべて
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】糸球体濾過に関して正しいのを選べ (2023年 問34)</h4>
+                <div class="options-vertical">
+                    1.毛細血管内圧は輸出細動脈内圧よりも低い<br>
+                    2.輸入細動脈を収縮すると毛細血管内圧は上昇する<br>
+                    3.動脈圧の変化によって毛細血管内圧が変動する<br>
+                    4.他の臓器よりも毛細血管内圧が高い<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】糸球体濾過量（GFR）を増加させる因子はどれか (2025年 問25、2023年 問35)</h4>
+                <div class="options-vertical">
+                    1.糸球体内毛細血管圧上昇<br>
+                    2.輸入細動脈収縮<br>
+                    3.ボウマン腔圧低下<br>
+                    4.血漿膠質浸透圧低下<br>
+                </div>
+                <div class="options-horizontal">
+                    a)1,3,4 b)1,2 c)2,3 d)4 のみ e) 全て
+                </div>
             </div>
 
             <div class="similar-question">
@@ -1021,18 +1457,57 @@
                     a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
                 </div>
             </div>
+
+            <div class="question-block">
+                <h4>【類題】糸球体を自由に通過する物質はどれか (2025年 問24、2024年 問36)</h4>
+                <div class="options-vertical">
+                    1.ブドウ糖<br>
+                    2.アミノ酸<br>
+                    3.HCO3-<br>
+                    4.Na+<br>
+                </div>
+                <div class="options-horizontal">
+                    a)1,3,4 b)1,2 c)2,3 d)4 のみ e) 全て
+                </div>
+            </div>
         </div>
 
         <div class="question-block">
-            <h4>【問】糸球体を自由に通過する物質はどれか (2025年 問24、2024年 問36)</h4>
+            <h4>【問】原尿が近位尿細管を通る際の説明として正しいものはどれか（2023年 問36）</h4>
             <div class="options-vertical">
-                1.ブドウ糖<br>
-                2.アミノ酸<br>
-                3.HCO3-<br>
-                4.Na+<br>
+                1 尿素濃度は低下しない<br>
+                2 グルコース濃度は低下する<br>
+                3 Na+濃度は約 80%低下する<br>
+                4 浸透圧が上昇する
             </div>
             <div class="options-horizontal">
-                a)1,3,4 b)1,2 c)2,3 d)4 のみ e) 全て
+                a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】ヘンレループに関して正しいのはどれか。（2024年 問39）</h4>
+            <div class="options-vertical">
+                1 細い下行脚では水の再吸収が促進する。<br>
+                2 細い上行脚では水の透過性が低く、NaC1 の透過性が高い。<br>
+                3 太い上行脚ではイオン輸送体によりイオンが排出されるため原尿の浸透圧は低下する。<br>
+                4 尿素の浸透圧勾配が対向流増幅系には重要である。
+            </div>
+            <div class="options-horizontal">
+                a (1,3,4) b(1,2) c (2,3) d(4のみ) e すべて
+            </div>
+
+            <div class="similar-question">
+                <h4>【問】ヘンレループに関して誤っているのはどれか。（2023年 問37）</h4>
+                <div class="options-vertical">
+                    1 細い下行脚では水の再吸収により髄質深部へ下降する濾液の浸透圧が上昇する。<br>
+                    2 細い上行脚では水の透過性が低く、NaCl の透過性が高いため、髄質深部の高浸透圧に寄与する。<br>
+                    3 太い上行脚では水の透過性が低く、イオン輸送体により NaCl が排出されるため濾液の浸透圧は低下する。<br>
+                    4 ヘンレループ下行脚と上行脚の結合がイオン交換を促進することで、対向流増幅系が形成される。  
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
             </div>
         </div>
 
@@ -1089,6 +1564,45 @@
         </div>
 
         <h3>[内分泌]</h3>
+
+        <div class="question-block">
+            <h4>【問】バゾプレッシンの分泌が増加するのはどれか。 (2024年 問56、2023年 問42)</h4>
+            <div class="options-vertical">
+                1.血漿浸透圧の増加<br>
+                2.平均動脈血圧の減少<br>
+                3.循環血液量減少<br>
+                4.腎性尿崩症<br>
+            </div>
+            <div class="options-horizontal">
+                a (1,2) b (1,4) c(2,3) d(3,4) すべて
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】成長ホルモン (GH)について正しいのはどれか。 (2024年 問57)</h4>
+            <div class="options-vertical">
+                1.分泌は空腹あるいは低血糖により著増する。<br>
+                2.分泌は徐波睡眠で増強する。<br>
+                3.分泌はソマトスタチンにより増強する。<br>
+                4.小児期の欠乏症では精神発達遅滞が認められる。<br>
+            </div>
+            <div class="options-horizontal">
+                a (1,2) b (1,4) c(2,3) d(3,4) すべて
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】成長ホルモンの分泌を増強するものを選べ（2023年 問43）</h4>
+                <div class="options-vertical">
+                    1 グレリン<br>
+                    2 REM 睡眠<br>
+                    3 Insulin-like growth factor Ⅰ<br>
+                    4 過剰なインスリン投与
+                </div>
+                <div class="options-horizontal">
+                    a (1, 2) b (1, 4) c (2, 3) d (3, 4) e すべて
+                </div>
+            </div>
+        </div>
 
         <div class="question-block">
             <h4>【問】ペプチドホルモンではないのはどれか (2025年 問37)</h4>
@@ -1171,6 +1685,19 @@
         </div>
 
         <div class="question-block">
+            <h4>【問】副腎髄質細胞について正しいのはどれか。（2023年 問45）</h4>
+            <div class="options-vertical">
+                1 神経堤に由来する。<br>
+                2 アドレナリンを分泌する。<br>
+                3 N-メチル転移酵素(PNMT)を発現する。<br>
+                4 副腎皮質からの高濃度のコルチゾールの作用を受ける。
+            </div>
+            <div class="options-horizontal">
+                a (1, 2) b (1, 4) c (2, 3) d (3, 4) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
             <h4>【問】コルチゾールについて正しいのはどれか (2025年 問40、2024年 問60)</h4>
             <div class="options-vertical">
                 1.分泌は早期睡眠中より増加しはじめる<br>
@@ -1220,6 +1747,19 @@
                     a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
                 </div>
             </div>
+            
+            <div class="similar-question">
+                <h4>【類題】レニンについて正しいものはどれか。 (2024年 問41)</h4>
+                <div class="options-vertical">
+                    1 傍糸球体装置からレニンは分泌される。<br>
+                    2 緻密斑を流れる原尿の NaC1 濃度が低いとレニン分泌の刺激になる。<br>
+                    3 レニンは細動脈平滑筋の受容体に結合し収縮を引き起こす。<br>
+                    4 レニンは副腎皮質の受容体に結合しアルドステロンを分泌させる。<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
+            </div>
 
             <div class="similar-question">
                 <h4>【類題】次の文章で誤っているのはどれか (2023年 問39)</h4>
@@ -1228,6 +1768,19 @@
                     2 同部位の NaCl 量低下により傍糸球体装置からのレニンの産生を促す。<br>
                     3 レニンはタンパク質分解酵素である。<br>
                     4 アンギオテンシン II は血管弛緩作用を有する。<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】アルドステロンについて正しいものはどれか (2023年 問47)</h4>
+                <div class="options-vertical">
+                    1. Na⁺と水の排泄を促進する<br>
+                    2. 過剰分泌により高カリウム血症をきたす<br>
+                    3. 11βhydroxysteroid dehydrogenase2 型により分解される<br>
+                    4. 副腎皮質腫瘍による過剰産生は高血圧症の原因となる
                 </div>
                 <div class="options-horizontal">
                     a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
@@ -1287,6 +1840,19 @@
             </div>
 
             <div class="similar-question">
+                <h4>【類題】インスリンの分泌を促進するのはどれか。 (2024年 問64、2023年 問50)</h4>
+                <div class="options-vertical">
+                    1 グルコース<br>
+                    2 アセチルコリン<br>
+                    3 glucagon-like peptide-1<br>
+                    4 膵β細胞内ATP増加<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1, 3, 4) b (1, 2) c (2, 3) d (4 のみ) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
                 <h4>【類題】インスリンについて正しいものを選べ (2023年 問49)</h4>
                 <div class="options-vertical">
                     1 6 量体の形成には亜鉛イオンを必要である<br>
@@ -1313,6 +1879,58 @@
             </div>
             <div class="options-horizontal">
                     a (1) b (2) c (3) d (4) e 何れでもない
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】 臓の外分泌について誤っているのはどれか。 (2024年 問47)</h4>
+            <div class="options-vertical">
+                1.セクレチンは導管上皮細胞を刺激して HCO』の分泌を促進する。<br>
+                2.コレシストキニンとアセチルコリンは腺房細胞を刺激して酵素分泌を促進する。<br>
+                3.タンパク質分解酵素の前駆体は、カルボキシペプチダーゼにより活性化される。<br>
+                4.腺房細胞はトリプシンインヒビターを分泌する。<br>
+            </div>
+            <div class="options-horizontal">
+                    a (1) b (2) c (3) d (4) e 何れでもない
+            </div>
+
+            <div class="similar-question">
+                <h4>【類題】正しいのはどれか。（2023年 問54）</h4>
+                <div class="options-vertical">
+                    1 セクレチンは、酸刺激により分泌される。<br>
+                    2 グルカゴン様ペプチド-1(GLP-1)は、インスリン分泌を抑制する。<br>
+                    3 コレシストキニン(CCK)は、胆汁分泌を促進する。<br>
+                    4 血管作動性腸管ペプチド(VIP)は、一酸化窒素(NO)の生成を促進する。
+                </div>
+                <div class="options-horizontal">
+                    a (1, 2, 4) b (2, 3) c (1, 3, 4) d (3, 4) e (2, 3, 4)
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】正しいものはどれか（2023年 問54）</h4>
+            <div class="options-vertical">
+                1 1 日における水分摂取量は、水分排泄量とほぼ等しい<br>
+                2 ムスカリン受容体の活性化により胃酸分泌は促進される<br>
+                3 ガストリンは、胃内腔に分泌される<br>
+                4 全身のセロトニンの 2％が腸内に存在する
+            </div>
+            <div class="options-horizontal">
+                a (1, 2) b (1, 4) c (2, 3) d (1, 3) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】肝臓と胆嚢の働きについて誤っているのはどれか。 (2024年 問48)</h4>
+            <div class="options-vertical">
+                1.胆汁中の胆汁酸とリン脂質はタンパク質の消化吸収に関与する。<br>
+                2.胆汁中にビリルビンやコレステロールなどの老廃物が排泄される。<br>
+                3.肝細胞で産生された胆汁は、類洞を介して門脈へ注ぐ。<br>
+                4.血流によって運搬されたコレシストキニンの刺激で胆嚢が収縮する。<br>
+            </div>
+            <div class="options-horizontal">
+                    a (1, 3) b (1, 4) с (2, 3) d (2, 5) e (4, 5)
             </div>
         </div>
 
@@ -1353,6 +1971,19 @@
             <div class="options-horizontal">
                 a (1, 2, 3) b (1, 3, 4) c (2, 3, 4) d (2, 4) e すべて
             </div>
+
+            <div class="similar-question">
+                <h4>【問】グルコース輸送体2(GLUT2)によるグルコース輸送について正しいのはどれか。（2024年 問53）</h4>
+                <div class="options-vertical">
+                    1 骨格筋細胞における細胞外から細胞内への輸送<br>
+                    2 肝臓における細胞外から細胞内への輸送<br>
+                    3 肝臓における細胞内から細胞外への輸送<br>
+                    4 小腸吸収上皮細胞における管腔側から細胞内への輸送
+                </div>
+                <div class="options-horizontal">
+                    a(1,2) b(1,4) c(2,3) d (3,4) e すべて
+                </div>
+            </div>
         </div>
 
         <div class="question-block">
@@ -1378,6 +2009,19 @@
                 <div class="options-horizontal">
                     a (1, 2) b (1, 3) c (2, 4) d (3, 4) e すべて
                 </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】タンパク質の消化・吸収について正しいものはどれか。（2024年 問50）</h4>
+            <div class="options-vertical">
+                1 塩酸はタンパク質の変性と pH 依存的なペプシノゲンの活性化に重要である。<br>
+                2 吸収上皮細胞に取り込まれたジペプチドやトリペプチドの多くは細胞内でアミノ酸へ分解される。<br>
+                3 吸収上皮細胞におけるアミノ酸の取り込みは Na依存的である。<br>
+                4 消化吸収されたタンパク質はリンパ管を介して輸送される。
+            </div>
+            <div class="options-horizontal">
+                a(1,2,3) b(1,4) c(3,4) d(2のみ) e すべて
             </div>
         </div>
 
@@ -1459,6 +2103,19 @@
             </div>
 
             <div class="similar-question">
+                <h4>【類題】大腸の運動について誤っているのはどれか (2024年 問45)</h4>
+                <div class="options-vertical">
+                    1 上行結腸では逆蠕動が起こる。<br>
+                    2 糜粥が回盲弁から結腸を通過するのに約半日かかる。<br>
+                    3 大蠕動により便が直腸へ押し込まれる。<br>
+                    4 外肛門括約筋は平滑筋の自発的な収縮により弛緩する。<br>
+                </div>
+                <div class="options-horizontal">
+                    a (1) b (2) c (3) d (4) e すべて
+                </div>
+            </div>
+
+            <div class="similar-question">
                 <h4>【類題】消化管運動に関して正しいものを選べ (2023年 問58)</h4>
                 <div class="options-vertical">
                     1. 蠕動運動は、消化管伸展刺激は関係ない<br>
@@ -1473,7 +2130,7 @@
         </div>
 
         <div class="question-block">
-            <h4>【類題】消化管内の微生物について正しいものはどれか (2023年/2024年共通)</h4>
+            <h4>【問】消化管内の微生物について正しいものはどれか (2024年 問61, 2023年 問61)</h4>
             <div class="options-vertical">
                 1 腸内細菌の個数は、体内の細胞数より少ない。<br>
                 2 出生後の新生児の腸内細菌叢は、産道の影響を受ける。<br>
@@ -1481,13 +2138,25 @@
                 4 腸内細菌叢は、年齢によって構成が大きく変化する。<br>
             </div>
             <div class="options-horizontal">
-                a (1, 3, 4) b (1, 2, 4) c (2, 3, 4) d (2, 3) e すべて<br>
-                (※2023年 問61, 2024年 問61 類題)
+                a (1, 3, 4) b (1, 2, 4) c (2, 3, 4) d (2, 3) e すべて
             </div>
         </div>
 
         <div class="question-block">
-            <h4>【類題】ビタミンについて正しいものを選べ (2023年 問60)</h4>
+            <h4>【問】正しいものを選べ (2023年 問59)</h4>
+            <div class="options-vertical">
+                1 唾液には消化酵素は含まれない<br>
+                2 グレリンには、摂食抑制作用がある<br>
+                3 胆汁酸に消化酵素は含まれない<br>
+                4 腸におけるセロトニン作用は蠕動運動に寄与する<br>
+            </div>
+            <div class="options-horizontal">
+                a (1, 2, 3) b (2, 3) c (3, 4) d (2, 4) e すべて
+            </div>
+        </div>
+
+        <div class="question-block">
+            <h4>【問】ビタミンについて正しいものを選べ (2023年 問60)</h4>
             <div class="options-vertical">
                 1 ビタミン E は、水溶性である。<br>
                 2 ビタミン C は、カイロミクロンに含まれる。<br>
